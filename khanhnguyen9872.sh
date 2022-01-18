@@ -33,3 +33,5 @@ echo "Facebook: https://fb.me/khanh10a1
 sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
 echo ""
 echo "Your IP Here: "
+read -p "Press Enter to exit!" anykey
+echo ""
