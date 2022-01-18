@@ -18,52 +18,52 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo ""
   echo "==========="
   echo ""
-  echo "Downloading Windows 7 x64...."
-  wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
+  echo "Downloading Windows XP x86...."
+  wget -O winxp.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/WinXPVPS/winxp.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
   echo ""
-  if [ -f win7.7z ] 2> /dev/null; then
-    echo "Installing Windows 7 x64...."
-    7z e win7.7z > /dev/null 2>&1 && echo " - Done (KhanhNguyen9872)"
-    if [ -f win7.7z ] 2> /dev/null; then
-      rm -f win7.7z 2> /dev/null
+  if [ -f winxp.7z ] 2> /dev/null; then
+    echo "Installing Windows XP x86...."
+    7z e winxp.7z > /dev/null 2>&1 && echo " - Done (KhanhNguyen9872)"
+    if [ -f winxp.7z ] 2> /dev/null; then
+      rm -f winxp.7z 2> /dev/null
     fi
   else
     echo "File error! Can't install!"
     rm -f khanhnguyen9872.vhd 2> /dev/null
-    rm -f win7.7z 2> /dev/null
+    rm -f winxp.7z 2> /dev/null
     rm -f khanhnguyen9872.sh 2> /dev/null
     exit 0
   fi
   if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
     echo "File error! Can't install! Exit!"
     rm -f khanhnguyen9872.vhd 2> /dev/null
-    rm -f win7.7z 2> /dev/null
+    rm -f winxp.7z 2> /dev/null
     rm -f khanhnguyen9872.sh 2> /dev/null
     exit 0
   fi
   echo ""
   echo "==========="
   echo ""
-  echo "Windows 7 x64 by KhanhNguyen9872"
+  echo "Windows XP x86 by KhanhNguyen9872"
   echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
   echo "Facebook: https://fb.me/khanh10a1"
   echo ""
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
-  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -m 8G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+  sudo qemu-system-i386 -hda khanhnguyen9872.vhd --full-screen -cpu max -smp cores=2 -m 2G -vga std -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
   echo ""
   rm -f khanhnguyen9872.sh
 else
-  echo "Windows 7 x64 by KhanhNguyen9872"
+  echo "Windows XP x86 by KhanhNguyen9872"
   echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
   echo "Facebook: https://fb.me/khanh10a1"
   echo ""
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
-  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -smp cores=2 -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+  sudo qemu-system-i386 -hda khanhnguyen9872.vhd --full-screen -cpu max -smp cores=2 -m 2G -vga std -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
   echo ""
   rm -f khanhnguyen9872.sh
