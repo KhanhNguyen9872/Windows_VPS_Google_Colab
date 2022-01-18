@@ -49,7 +49,8 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo ""
   echo "Your IP Here: "
   curl ifconfig.me
-  hostname -I | awk '{print $1}'
+  echo ""
+  curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
   sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -smp cores=2 -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
@@ -62,7 +63,8 @@ else
   echo ""
   echo "Your IP Here: "
   curl ifconfig.me
-  hostname -I | awk '{print $1}'
+  echo ""
+  curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
   sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -smp cores=2 -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
