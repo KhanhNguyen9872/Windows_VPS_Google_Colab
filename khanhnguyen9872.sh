@@ -7,8 +7,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Preparing...."
   wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
-  read -p "Paste authtoken ngrok: " CRP
-  ./ngrok authtoken $CRP > /dev/null 2>&1
+  ./ngrok authtoken 23rG6Pk5nPdctalhFJnCaOevCGg_5MUxr1dNmXE43Lnh7cH8h > /dev/null 2>&1
   nohup ./ngrok tcp 5900 > /dev/null 2>&1
   echo "Please wait for installing...."
   sudo apt update -y > /dev/null 2>&1
