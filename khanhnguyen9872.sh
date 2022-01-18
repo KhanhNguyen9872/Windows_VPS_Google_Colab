@@ -51,7 +51,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
-  sudo qemu-system-i386 -hda khanhnguyen9872.qcow2 --full-screen -cpu max -smp cores=2 -m 3G -vga std -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+  sudo qemu-system-i386 -hda khanhnguyen9872.qcow2 --full-screen -cpu max -smp cores=2 -m 4G -device virtio-rng-pci,rng=rng0 -vga vmware -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
   echo ""
   rm -f khanhnguyen9872.sh
@@ -63,7 +63,7 @@ else
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
-  sudo qemu-system-i386 -hda khanhnguyen9872.qcow2 --full-screen -cpu max -smp cores=2 -m 3G -vga std -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+  sudo qemu-system-i386 -hda khanhnguyen9872.qcow2 --full-screen -cpu max -smp cores=2 -m 4G -device virtio-rng-pci,rng=rng0 -vga vmware -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
   read -p "Press Enter to exit!" anykey
   echo ""
   rm -f khanhnguyen9872.sh
