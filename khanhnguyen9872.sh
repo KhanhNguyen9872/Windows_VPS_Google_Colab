@@ -20,6 +20,7 @@ if [ -f win7.7z ]; then
   7z e win7.7z
 else
   echo "File error! Can't install!"
+  cat /proc/cpuinfo
   exit 0
 fi
 if [ ! -f khanhnguyen9872.qcow2 ]; then
@@ -29,7 +30,6 @@ fi
 echo "Windows 7 x64 by KhanhNguyen9872"
 echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
 echo "Facebook: https://fb.me/khanh10a1
-sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
 echo ""
 echo "Your IP Here: "
-cat /proc/cpuinfo
