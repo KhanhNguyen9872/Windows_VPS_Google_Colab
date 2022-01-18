@@ -8,8 +8,8 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   read -p "Nhập key ngrok: " key
-  ./ngrok authtoken ${key} > /dev/null 2>&1
-  nohup ./ngrok tcp 5900 > /dev/null 2>&1
+  ./ngrok authtoken ${key}
+  nohup ./ngrok tcp 5900
   echo ""
   sudo apt update -y > /dev/null 2>&1
   echo "Installing QEMU (1-3m)...."
