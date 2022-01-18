@@ -12,7 +12,7 @@ nohup ./ngrok tcp 5900 &>/dev/null &
 echo Please wait for installing...
 sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
-sudo apt install qemu-system-x86 wget ifconfig b7zip -y > /dev/null 2>&1
+sudo apt install qemu-system-x86 wget ifconfig b7zip curl -y > /dev/null 2>&1
 echo "Downloading Windows 7 x64"
 wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z
 if [ -f win7.7z ]; then
@@ -30,8 +30,9 @@ fi
 echo "Windows 7 x64 by KhanhNguyen9872"
 echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
 echo "Facebook: https://fb.me/khanh10a1
-sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0
 echo ""
 echo "Your IP Here: "
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 read -p "Press Enter to exit!" anykey
 echo ""
