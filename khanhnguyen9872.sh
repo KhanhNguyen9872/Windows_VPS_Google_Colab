@@ -5,15 +5,15 @@
 #Phone: +84937927513
 if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Preparing...."
-  wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip
+  wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   read -p "Paste authtoken ngrok: " CRP
-  ./ngrok authtoken $CRP 
+  ./ngrok authtoken $CRP > /dev/null 2>&1
   nohup ./ngrok tcp 5900 &>/dev/null &
   echo "Please wait for installing...."
   sudo apt update -y > /dev/null 2>&1
   echo "Installing QEMU (2-3m)...."
-  sudo apt install qemu-system-x86 curl -y
+  sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
   echo "Downloading Windows 7 x64...."
   wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null || echo "Done (KhanhNguyen9872)"
   if [ -f win7.7z ] 2> /dev/null; then
