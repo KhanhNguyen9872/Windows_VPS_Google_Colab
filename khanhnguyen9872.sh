@@ -12,9 +12,9 @@ nohup ./ngrok tcp 5900 &>/dev/null &
 echo Please wait for installing...
 sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
-sudo apt install qemu-system-x86 wget ifconfig b7zip curl -y > /dev/null 2>&1
+sudo apt install qemu-system-x86 wget ifconfig b7zip curl -y
 echo "Downloading Windows 7 x64"
-wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z
+wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null
 if [ -f win7.7z ]; then
   echo "Installing Windows 7 x64"
   7z e win7.7z
