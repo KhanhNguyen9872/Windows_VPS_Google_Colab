@@ -10,9 +10,9 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   read -p "Nhập key ngrok: " key
   ./ngrok authtoken ${key} > /dev/null 2>&1
   nohup ./ngrok tcp 5900 > /dev/null 2>&1
-  echo "Please wait for installing...."
+  echo ""
   sudo apt update -y > /dev/null 2>&1
-  echo "Installing QEMU (2-3m)...."
+  echo "Installing QEMU (1-3m)...."
   sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1 && echo " - Done (KhanhNguyen9872)"
   echo ""
   echo "==========="
