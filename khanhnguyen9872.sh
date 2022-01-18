@@ -14,7 +14,7 @@ sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
 sudo apt install qemu-system-x86 wget ifconfig b7zip -y > /dev/null 2>&1
 echo "Downloading Windows 7 x64"
-wget -O win7.7z https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/win7/win7.7z
+wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z
 if [ -f win7.7z ]; then
   echo "Installing Windows 7 x64"
   7z e win7.7z
