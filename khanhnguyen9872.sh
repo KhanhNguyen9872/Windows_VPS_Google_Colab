@@ -1,6 +1,6 @@
 #!/bin/sh
 #KhanhNguyen9872
-#Youtube: 
+#Youtube: https://www.youtube.com/channel/UC8didcLVaL4iTfbuWBGv51w
 #Facebook: https://fb.me/khanh10a1
 #Phone: +84937927513
 if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
