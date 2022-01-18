@@ -22,7 +22,8 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   echo "1. Windows 7 x64"
   echo "2. Windows XP SP3 x86"
   echo ""
-  read -p "Choose your Windows!" windows
+  read -p "Choose your Windows: " windows
+  echo ""
   if [ ${windows} -eq 1 ] 2> /dev/null; then
     echo "Downloading Windows 7 x64...."
     wget -O winxp.7z https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/releases/download/Win7VPS/win7.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
