@@ -5,7 +5,7 @@
 #Phone: +84937927513
 if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
   echo "Preparing...."
-  wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+  wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_VPS_Google_Colab/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   read -p "Nhập key ngrok: " key
   ./ngrok authtoken $key
@@ -50,7 +50,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   else
     if [ ${windows} -eq 2 ] 2> /dev/null; then
       echo "Downloading Windows XP SP3 x86...."
-      wget -O winxp.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/WinXPVPS/winxp.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
+      wget -O winxp.7z https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/releases/download/WinXPVPS/winxp.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
       echo ""
       if [ -f winxp.7z ] 2> /dev/null; then
         echo "Installing Windows XP SP3 x86...."
