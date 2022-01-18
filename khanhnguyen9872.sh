@@ -39,7 +39,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Windows 7 x64 by KhanhNguyen9872"
   echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
   echo "Facebook: https://fb.me/khanh10a1"
-  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0
+  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu Haswell -smp cores=2 -enable-kvm -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0
   echo ""
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
@@ -50,7 +50,7 @@ else
   echo "Windows 7 x64 by KhanhNguyen9872"
   echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
   echo "Facebook: https://fb.me/khanh10a1"
-  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge-v2 -smp cores=2 -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0
+  sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu Haswell -smp cores=2 -daemonize -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0
   echo ""
   echo "Your IP Here: "
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
