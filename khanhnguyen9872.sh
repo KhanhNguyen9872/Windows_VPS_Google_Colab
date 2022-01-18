@@ -4,7 +4,7 @@
 #Facebook: https://fb.me/khanh10a1
 #Phone: +84937927513
 echo "Preparing...."
-wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_7_VPS_12Hours/main/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 read -p "Paste authtoken ngrok: " CRP
 ./ngrok authtoken $CRP 
