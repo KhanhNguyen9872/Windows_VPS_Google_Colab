@@ -13,10 +13,13 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Please wait for installing...."
   sudo apt update -y > /dev/null 2>&1
   echo "Installing QEMU (2-3m)...."
-  sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
+  sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1 && echo " - Done (KhanhNguyen9872)"
+  echo ""
   echo "==========="
+  echo ""
   echo "Downloading Windows 7 x64...."
   wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
+  echo ""
   if [ -f win7.7z ] 2> /dev/null; then
     echo "Installing Windows 7 x64...."
     7z e win7.7z > /dev/null 2>&1 && echo " - Done (KhanhNguyen9872)"
@@ -37,6 +40,9 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
     rm -f khanhnguyen9872.sh 2> /dev/null
     exit 0
   fi
+  echo ""
+  echo "==========="
+  echo ""
   echo "Windows 7 x64 by KhanhNguyen9872"
   echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
   echo "Facebook: https://fb.me/khanh10a1"
