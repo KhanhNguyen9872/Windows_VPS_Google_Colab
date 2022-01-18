@@ -49,8 +49,6 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   echo "Facebook: https://fb.me/khanh10a1"
   echo ""
   echo "Your IP Here: "
-  curl ifconfig.me
-  echo ""
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
   sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -m 8G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
@@ -63,8 +61,6 @@ else
   echo "Facebook: https://fb.me/khanh10a1"
   echo ""
   echo "Your IP Here: "
-  curl ifconfig.me
-  echo ""
   curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
   echo ""
   sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd -cpu SandyBridge -smp cores=2 -m 10G -vga vmware -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
