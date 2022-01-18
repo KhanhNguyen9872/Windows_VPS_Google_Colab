@@ -10,15 +10,15 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   read -p "Paste authtoken ngrok: " CRP
   ./ngrok authtoken $CRP 
   nohup ./ngrok tcp 5900 &>/dev/null &
-  echo Please wait for installing...
+  echo "Please wait for installing...."
   sudo apt update -y > /dev/null 2>&1
-  echo "Installing QEMU (2-3m)..."
+  echo "Installing QEMU (2-3m)...."
   sudo apt install qemu-system-x86 curl -y
-  echo "Downloading Windows 7 x64"
-  wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null
+  echo "Downloading Windows 7 x64...."
+  wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_7_VPS_12Hours/releases/download/Win7VPS/win7.7z 2> /dev/null || echo "Done (KhanhNguyen9872)"
   if [ -f win7.7z ] 2> /dev/null; then
-    echo "Installing Windows 7 x64"
-    7z e win7.7z
+    echo "Installing Windows 7 x64...."
+    7z e win7.7z 2> /dev/null || echo "Done (KhanhNguyen9872)"
     if [ -f win7.7z ] 2> /dev/null; then
       rm -f win7.7z 2> /dev/null
     fi
