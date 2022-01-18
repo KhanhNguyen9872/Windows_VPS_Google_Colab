@@ -9,7 +9,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null; then
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   read -p "Paste authtoken ngrok: " CRP
   ./ngrok authtoken $CRP > /dev/null 2>&1
-  nohup ./ngrok tcp 5900 &>/dev/null &
+  nohup ./ngrok tcp 5900 > /dev/null 2>&1
   echo "Please wait for installing...."
   sudo apt update -y > /dev/null 2>&1
   echo "Installing QEMU (2-3m)...."
