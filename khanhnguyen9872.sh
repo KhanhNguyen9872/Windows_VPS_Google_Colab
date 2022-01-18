@@ -1,4 +1,9 @@
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+#!/bin/sh
+#KhanhNguyen9872
+#Youtube: 
+#Facebook: https://fb.me/khanh10a1
+#Phone: +84937927513
+wget -O ngrok-stable-linux-amd64.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 read -p "Paste authtoken ngrok: " CRP
 ./ngrok authtoken $CRP 
