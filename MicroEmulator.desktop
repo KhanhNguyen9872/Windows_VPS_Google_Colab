@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MicroEmulator
+Comment=
+Exec=microemulator
+Icon=
+Path=
+Terminal=false
+StartupNotify=false
