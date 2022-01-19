@@ -18,14 +18,21 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   read -p "Choose your platform: " platform
   echo ""
   if [ ${platform} -eq 1 ]; then
-    sudo apt update -y
-    sudo apt install xfce4 xarchiver chromium-browser openjdk-11-jre mesa-utils xfce4-goodies tightvncserver -y
-    sudo useradd -s /bin/bash -m khanh
-    passwd khanh
-    su khanh
-    echo "/usr/bin/xfce4-session" >> /home/khanh/.vnc/xstartup
-    vncserver :0 -localhost no
-    
+    echo "Installing Linux (Ubuntu amd64)...."
+    echo ""
+    sudo apt update -y 2> /dev/null
+    sudo apt install xfce4 xarchiver chromium-browser openjdk-11-jre mesa-utils xfce4-goodies tightvncserver -y 2> /dev/null
+    clear
+    echo ""
+    echo "Setting up your Password"
+    echo ""
+    sudo passwd
+    echo "/usr/bin/xfce4-session" >> /root/.vnc/xstartup
+    vncserver :0 -localhost no -geometry 1280x720 2> /dev/null
+    clear
+    printf "\nYour IP here: "
+    curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+    echo ""
   else
     echo "Please wait for installing..."
     echo ""
