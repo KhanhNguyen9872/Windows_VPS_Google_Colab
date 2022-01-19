@@ -115,7 +115,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   fi
 else
   if [ -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
-    echo "Windows XP x86 by KhanhNguyen9872"
+    echo "Windows XP SP3 x86 by KhanhNguyen9872"
     echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
     echo "Facebook: https://fb.me/khanh10a1"
     echo ""
@@ -128,7 +128,7 @@ else
     rm -f khanhnguyen9872.sh
   else
     if [ -f khanhnguyen9872.vhd ] 2> /dev/null; then
-      echo "Windows XP x86 by KhanhNguyen9872"
+      echo "Windows 7 x64 by KhanhNguyen9872"
       echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
       echo "Facebook: https://fb.me/khanh10a1"
       echo ""
