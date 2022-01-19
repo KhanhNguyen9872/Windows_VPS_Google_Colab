@@ -19,18 +19,6 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   echo ""
   if [ ${platform} -eq 1 ]; then
     sudo apt update -y
-    libjpeg_ver = "2.0.5"
-    virtualGL_ver = "2.6.4"
-    turboVNC_ver = "2.2.5"
-    libjpeg_url = "https://github.com/demotomohiro/turbovnc/releases/download/2.2.5/libjpeg-turbo-official_${libjpeg_ver}_amd64.deb"
-    virtualGL_url = "https://github.com/demotomohiro/turbovnc/releases/download/2.2.5/virtualgl_${virtualGL_ver}_amd64.deb"
-    turboVNC_url = "https://github.com/demotomohiro/turbovnc/releases/download/2.2.5/turbovnc_${turboVNC_ver}_amd64.deb"
-    wget -O libjpeg.deb $libjpeg_url
-    wget -O virtualGL.deb $virtualGL_url
-    wget -O turboVNC.deb $turboVNC_url
-    sudo apt install libjpeg.deb -y
-    sudo apt install virtualGL.deb -y
-    sudo apt install turboVNC.deb -y
     sudo apt install xfce4 xarchiver chromium-browser openjdk-11-jre mesa-utils xfce4-goodies tightvncserver -y
     sudo useradd -s /bin/bash -m khanh
     passwd khanh
