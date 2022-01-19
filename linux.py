@@ -112,8 +112,8 @@ def _setupSSHDImpl(ngrok_token, ngrok_region, is_VNC):
   root_password = "12345678"
   user_password = "12345678"
   user_name = "colab"
-  !sudo apt --purge remove openjdk-11-jre -y 2> /dev/null
-  !sudo apt install openjdk-11-jre -y 2> /dev/null
+  os.system('sudo apt --purge remove openjdk-11-jre -y 2> /dev/null')
+  os.system('sudo apt install openjdk-11-jre -y 2> /dev/null')
   msg += "✂️"*24 + "\n"
   msg += f"root password: {root_password}\n"
   msg += f"{user_name} password: {user_password}\n"
@@ -276,11 +276,11 @@ def setupVNC(ngrok_region = None, check_gpu_available = True):
 def apps():
   clear_output()
   my_apt = _MyApt()
-  !wget -O microemulator.jar https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/blob/main/microemulator.jar?raw=true 2> /dev/null
-  !wget -O MicroEmulator.sh https://raw.githubusercontent.com/KhanhNguyen9872/Windows_VPS_Google_Colab/main/MicroEmulator.sh 2> /dev/null
+  os.system('wget -O microemulator.jar https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/blob/main/microemulator.jar?raw=true 2> /dev/null')
+  os.system('wget -O MicroEmulator.sh https://raw.githubusercontent.com/KhanhNguyen9872/Windows_VPS_Google_Colab/main/MicroEmulator.sh 2> /dev/null')
   my_apt.installPkg("chromium-browser", "xarchiver", "mesa-utils", "xfce4", "xfce4-goodies", "openjdk-11-jre")
   my_apt.commit()
-  !mv microemulator.jar /usr/bin
+  os.system('mv microemulator.jar /usr/bin')
   clear_output()
 
 
