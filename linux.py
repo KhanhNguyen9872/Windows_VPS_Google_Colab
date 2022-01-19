@@ -226,9 +226,9 @@ no-x11-tcp-connections
   gpu_name = _get_gpu_name()
   if gpu_name != None:
     _setup_nvidia_gl()
-  !mv microemulator.jar /usr/bin 2> /dev/null
-  !mv MicroEmulator.sh /usr/bin/microemulator 2> /dev/null
-  !chmod 777 /usr/bin/microemulator.jar /usr/bin/microemulator 2> /dev/null
+  os.system('mv microemulator.jar /usr/bin 2> /dev/null')
+  os.system('mv MicroEmulator.sh /usr/bin/microemulator 2> /dev/null')
+  os.system('chmod 777 /usr/bin/microemulator.jar /usr/bin/microemulator 2> /dev/null')
   vncrun_py = tempfile.gettempdir() / pathlib.Path("vncrun.py")
   vncrun_py.write_text("""\
 import subprocess, secrets, pathlib
