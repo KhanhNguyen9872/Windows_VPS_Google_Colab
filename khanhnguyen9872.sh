@@ -27,6 +27,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
     echo "Setting up your Password"
     echo ""
     sudo passwd
+    mkdir /root/.vnc
     echo "/usr/bin/xfce4-session" >> /root/.vnc/xstartup
     vncserver :0 -localhost no -geometry 1280x720 > /dev/null 2>&1
     clear
