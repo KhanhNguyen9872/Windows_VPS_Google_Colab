@@ -10,6 +10,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   read -p "Nhập key ngrok: " key
   ./ngrok authtoken $key
   nohup ./ngrok tcp 5900 &>/dev/null &
+  echo "KhanhNguyen9872"
   echo ""
   echo "1. Linux (Ubuntu amd64)"
   echo "2. Windows"
