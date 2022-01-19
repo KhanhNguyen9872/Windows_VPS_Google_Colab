@@ -123,35 +123,34 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
         exit 0
       fi
     fi
+else
+  if [ -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
+    echo "Windows XP SP3 x86 by KhanhNguyen9872"
+    echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
+    echo "Facebook: https://fb.me/khanh10a1"
+    echo ""
+    echo "Your IP Here: "
+    curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+    echo ""
+    sudo qemu-system-x86_64 -hda khanhnguyen9872.qcow2 --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+    read -p "Press Enter to exit!" anykey
+    echo ""
+    rm -f khanhnguyen9872.sh
   else
-    if [ -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
-      echo "Windows XP SP3 x86 by KhanhNguyen9872"
+    if [ -f khanhnguyen9872.vhd ] 2> /dev/null; then
+      echo "Windows 7 x64 by KhanhNguyen9872"
       echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
       echo "Facebook: https://fb.me/khanh10a1"
       echo ""
       echo "Your IP Here: "
       curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
       echo ""
-      sudo qemu-system-x86_64 -hda khanhnguyen9872.qcow2 --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+      sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
       read -p "Press Enter to exit!" anykey
       echo ""
       rm -f khanhnguyen9872.sh
     else
-      if [ -f khanhnguyen9872.vhd ] 2> /dev/null; then
-        echo "Windows 7 x64 by KhanhNguyen9872"
-        echo "Youtube: https://www.youtube.com/c/KhanhNguyen9872_Official"
-        echo "Facebook: https://fb.me/khanh10a1"
-        echo ""
-        echo "Your IP Here: "
-        curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
-        echo ""
-        sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
-        read -p "Press Enter to exit!" anykey
-        echo ""
-        rm -f khanhnguyen9872.sh
-      else
-        exit 0
-      fi
+      exit 0
     fi
   fi
 fi
