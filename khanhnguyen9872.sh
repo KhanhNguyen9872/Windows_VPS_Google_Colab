@@ -20,7 +20,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   if [ ${platform} -eq 1 ]; then
     wget -O linux.py https://raw.githubusercontent.com/KhanhNguyen9872/Windows_VPS_Google_Colab/main/linux.py > /dev/null 2>&1
     chmod 777 linux.py
-    python3 linux.py
+    ./linux.py
   else
     echo "Please wait for installing..."
     echo ""
