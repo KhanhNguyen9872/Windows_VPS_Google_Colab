@@ -123,6 +123,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
         exit 0
       fi
     fi
+  fi
 else
   if [ -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
     echo "Windows XP SP3 x86 by KhanhNguyen9872"
