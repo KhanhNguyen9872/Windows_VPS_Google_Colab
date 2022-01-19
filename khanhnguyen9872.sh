@@ -27,9 +27,12 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
     echo "Setting up your Password"
     echo ""
     sudo passwd
+    vncpasswd
     mkdir /root/.vnc
     echo "/usr/bin/xfce4-session" >> /root/.vnc/xstartup
     vncserver :0 -localhost no -geometry 1280x720
+    DISPLAY=:0
+    /usr/bin/xfce4-session
     clear
     printf "\nYour IP here: "
     curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
