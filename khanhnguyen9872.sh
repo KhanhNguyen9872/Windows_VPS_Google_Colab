@@ -134,7 +134,7 @@ else
     echo "Your IP Here: "
     curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
     echo ""
-    sudo qemu-system-x86_64 -hda khanhnguyen9872.qcow2 --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+    sudo qemu-system-x86_64 -hda khanhnguyen9872.qcow2 --full-screen -accel tcg -cpu max -smp cores=1,threads=2 -m 3G -vga std -machine pc -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
     read -p "Press Enter to exit!" anykey
     echo ""
     rm -f khanhnguyen9872.sh
@@ -147,7 +147,7 @@ else
       echo "Your IP Here: "
       curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
       echo ""
-      sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd --full-screen -accel tcg -cpu max -smp cores=2 -m 4G -vga std -nographic -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
+      sudo qemu-system-x86_64 -hda khanhnguyen9872.vhd --full-screen -accel tcg -cpu max -smp cores=1,threads=2 -m 3G -vga std -machine pc -machine usb=on -device usb-tablet -device rtl8139,netdev=n0 -netdev user,id=n0 -vnc :0 > /dev/null 2>&1
       read -p "Press Enter to exit!" anykey
       echo ""
       rm -f khanhnguyen9872.sh
