@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#KhanhNguyen9872
 import apt, apt.debfile
 import pathlib, stat, shutil, urllib.request, subprocess, getpass, time, tempfile
 import secrets, json, re
