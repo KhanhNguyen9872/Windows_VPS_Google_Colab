@@ -126,7 +126,7 @@ def _setupSSHDImpl(ngrok_token, ngrok_region, is_VNC):
   if not pathlib.Path('/root/.ngrok2/ngrok.yml').exists():
     subprocess.run(["./ngrok", "authtoken", ngrok_token])
   
-  ngrok_proc = subprocess.Popen(["./ngrok", "tcp", "-region", ngrok_region, "5901"])
+  ngrok_proc = subprocess.Popen(["./ngrok", "tcp", "-region", ap, "5901"])
   time.sleep(2)
 
   with urllib.request.urlopen("http://localhost:4040/api/tunnels") as response:
@@ -155,7 +155,7 @@ def _setupSSHDMain(ngrok_region, check_gpu_available, is_VNC):
   clear_output()
 
   if not ngrok_region:
-    ngrok_region = region = "us"
+    ngrok_region = region = "ap"
     clear_output()
     apps()
 
