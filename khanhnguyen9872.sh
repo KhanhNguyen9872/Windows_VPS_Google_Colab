@@ -3,7 +3,7 @@
 #Youtube: https://www.youtube.com/channel/UC8didcLVaL4iTfbuWBGv51w
 #Facebook: https://fb.me/khanh10a1
 #Phone: +84937927513
-if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
+if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null || [ ! -f khanhnguyen9872.qcow2 ] 2> /dev/null; then
   echo "Preparing...."
   wget -O ngrok-stable-linux-amd64.zip https://raw.githubusercontent.com/KhanhNguyen9872/Windows_VPS_Google_Colab/main/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
   unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
@@ -17,11 +17,11 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
   echo ""
   read -p "Choose your platform: " platform
   echo ""
-  if [ ${platform} -eq 1 ]; then
+  if [[ ${platform} -eq 1 ]]; then
     echo "Installing Linux (Ubuntu amd64)...."
     echo ""
     sudo apt update -y > /dev/null 2>&1
-    sudo apt install xfce4 xarchiver chromium-browser openjdk-11-jre mesa-utils xfce4-goodies tightvncserver > /dev/null 2>&1
+    sudo apt install xfce4 xarchiver chromium-browser mesa-utils xfce4-goodies dbus perl tigervnc-standalone-server tigervnc-xorg-extension > /dev/null 2>&1
     useradd -s /bin/bash -m khanh
     echo ""
     echo ""
@@ -53,7 +53,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
     echo ""
     read -p "Choose your Windows: " windows
     echo ""
-    if [ ${windows} -eq 1 ] 2> /dev/null; then
+    if [[ ${windows} -eq 1 ]] 2> /dev/null; then
       echo "Downloading Windows 7 x64...."
       wget -O win7.7z https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/releases/download/Win7VPS/win7.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
       echo ""
@@ -78,7 +78,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
         exit 0
       fi
     else
-      if [ ${windows} -eq 2 ] 2> /dev/null; then
+      if [[ ${windows} -eq 2 ]] 2> /dev/null; then
         echo "Downloading Windows XP SP3 x86...."
         wget -O winxp.7z https://github.com/KhanhNguyen9872/Windows_VPS_Google_Colab/releases/download/WinXPVPS/winxp.7z 2> /dev/null && echo " - Done (KhanhNguyen9872)"
         echo ""
@@ -107,7 +107,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
         exit 0
       fi
     fi
-    if [ ${windows} -eq 2 ] 2> /dev/null; then
+    if [[ ${windows} -eq 2 ]] 2> /dev/null; then
       echo ""
       echo "==========="
       echo ""
@@ -123,7 +123,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null && [ ! -f khanhnguyen9872.qcow2 ] 2
       echo ""
       rm -f khanhnguyen9872.sh
     else
-      if [ ${windows} -eq 1 ] 2> /dev/null; then
+      if [[ ${windows} -eq 1 ]] 2> /dev/null; then
         echo ""
         echo "==========="
         echo ""
