@@ -28,6 +28,13 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null || [ ! -f khanhnguyen9872.qcow2 ] 2
     echo "Setting up your Password"
     echo ""
     passwd khanh
+    if [ -d /home/khanh ] 2> /dev/null; then
+      export HOME="/home/khanh"
+      export DISPLAY=":0"
+    else
+      export HOME="/root"
+      export DISPLAY=":0"
+    fi
     echo ""
     printf "\nYour IP here: "
     curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
