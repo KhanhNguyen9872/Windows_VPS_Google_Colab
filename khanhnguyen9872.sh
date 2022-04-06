@@ -21,7 +21,7 @@ if [ ! -f khanhnguyen9872.vhd ] 2> /dev/null || [ ! -f khanhnguyen9872.qcow2 ] 2
     echo "Installing Linux (Ubuntu amd64)...."
     echo ""
     sudo apt update -y > /dev/null 2>&1
-    sudo apt install xfce4 xarchiver chromium-browser mesa-utils xfce4-goodies dbus perl tigervnc-standalone-server tigervnc-xorg-extension > /dev/null 2>&1
+    sudo apt install xfce4 xarchiver chromium-browser mesa-utils xfce4-goodies dbus perl p7zip unzip zip curl tar git python3 python3-pip net-tools tigervnc-standalone-server tigervnc-xorg-extension -y > /dev/null 2>&1
     useradd -s /bin/bash -m khanh
     echo ""
     echo ""
